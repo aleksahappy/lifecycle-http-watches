@@ -8,13 +8,6 @@ body {
   color: #404040;
 }
 
-.App {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .watches {
   min-width: 572px;
   min-height: 252px;
@@ -93,7 +86,7 @@ body {
 .watch {
   position: relative;
   width: 76px;
-  margin-right: 37px;
+  margin: 0 37px 25px 0;
 }
 
 .watch .name {
