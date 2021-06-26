@@ -17,7 +17,7 @@ const initialWatch = {
   // hours: 0,
   // minutes: 0,
   // seconds: 0
-  // Вариант с аналоговыми часами:y
+  // Вариант с аналоговыми часами:
   hours: {},
   minutes: {},
   seconds: {}
@@ -27,6 +27,15 @@ export default class Watch extends Component {
   constructor(props) {
     super(props);
     this.state = initialWatch;
+    this.interval = undefined;
+  }
+
+  componentDidMount() {
+    this.updateWatch();
+    this.interval = setInterval(() => this.updateWatch(), 1000);
+  }
+
+  componentWillUnmount() {
     this.interval = undefined;
   }
 
@@ -66,15 +75,6 @@ export default class Watch extends Component {
         transform: 'rotateZ('+ seconds +'deg)'
       }
     });
-  }
-
-  componentDidMount() {
-    this.updateWatch();
-    this.interval = setInterval(() => this.updateWatch(), 1000);
-  }
-
-  componentWillUnmount() {
-    this.interval = undefined;
   }
 
   render() {
