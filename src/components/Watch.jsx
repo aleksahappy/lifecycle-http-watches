@@ -36,7 +36,7 @@ export default class Watch extends Component {
   }
 
   componentWillUnmount() {
-    this.interval = undefined;
+    clearInterval(this.interval);
   }
 
   deleteWatch = () => {
